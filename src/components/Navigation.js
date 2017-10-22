@@ -8,11 +8,13 @@ Navigation.propTypes = ActionLinks.propTypes = NavLinks.propTypes = {
 }
 
 function NavLinks ({isAuthed}) {
-  return isAuthed === true
-    ? <ul>
-        <li><Link to='/' >{'Home'}</Link></li>
-      </ul>
-    : null
+  return (
+  
+  <ul>
+    <li><Link to='/' >{'Home'}</Link></li>
+    <li><Link to='/Tracks' >{'Tracks'}</Link></li>
+  </ul>
+  )
 }
 
 function ActionLinks ({isAuthed}) {
@@ -30,10 +32,7 @@ function ActionLinks ({isAuthed}) {
 export default function Navigation ({isAuthed}) {
   return (
     <div>
-      <nav>
         <NavLinks isAuthed={isAuthed} />
-        <ActionLinks isAuthed={isAuthed} />
-      </nav>
     </div>
   )
 }
